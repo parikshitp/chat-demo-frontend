@@ -17,7 +17,6 @@ export class DialogComponent {
     if (this.username.trim() !== '') {
 
       this.usernameService.setUsername(this.username);
-      // Navigate to chat component
       this.router.navigate(['/chat']);
     } else {
       alert('Please enter a username.');

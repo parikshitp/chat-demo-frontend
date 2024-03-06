@@ -1,5 +1,4 @@
 import { Component, OnDestroy } from '@angular/core';
-import { ChatService } from '../service/chat.service';
 import { WebSocketService } from '../service/web-socket.service';
 import { OnInit } from '@angular/core';
 import { ChatMessageDto } from '../model/chatMessageDto';

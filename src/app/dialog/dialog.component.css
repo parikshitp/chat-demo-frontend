@@ -9,8 +9,9 @@
     text-align: center;
     background-color: #f0f0f0; 
     padding: 20px; 
-    border-radius: 8px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   }
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
   
   .content div {
     margin-bottom: 10px; 

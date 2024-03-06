@@ -45,10 +45,13 @@
 
 .sent {
   background-color: #e6f2ff;
+  border-radius: 20px;
 }
 
 .received {
   background-color: #f2f2f2;
+  border-radius: 20px;
+
 }
 
 .chat-footer {
@@ -56,14 +59,17 @@
   border-top: 1px solid #ccc;
   display: flex;
   align-items: center;
+  justify-content: space-between; 
 }
 
 .message-input {
   flex: 1;
-  min-width: 0;
+width: max-content;
+  /* min-width: 50px; */
   padding: 8px;
   border: none;
   border-radius: 5px;
+  margin-right: 20px; 
 }
 
 .send-button {
@@ -73,5 +79,9 @@
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
-  margin-left: 10px; /* Add some space between the input field and the button */
+  margin-left: 100px;
+}
+
+.chat-messages small {
+  color: #929ce5;
 }

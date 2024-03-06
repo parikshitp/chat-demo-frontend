@@ -19,14 +19,16 @@ export class WebSocketService {
 
     this.webSocket.onmessage = (event) => {
       try {
-        const message = JSON.parse(event.data);
-        console.log('Received message: ', message);
-        this.chatMessages.push(message);
+        const receivedMessage = JSON.parse(event.data);
+    
+        receivedMessage.timestamp = new Date().toISOString();
+    
+        this.chatMessages.push(receivedMessage);
       } catch (error) {
         console.error('Error parsing message: ', error);
       }
     };
-
+    
   }
 
   public sendMessage(chatMessageDto: ChatMessageDto): void {
