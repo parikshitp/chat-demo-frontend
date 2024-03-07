@@ -40,7 +40,6 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.sentTimestamp = new Date();
     const chatMessageDto = new ChatMessageDto(this.username, sendForm.value.message, this.sentTimestamp);
     this.webSocketService.sendMessage(chatMessageDto);
-    this.sentMessages.push(chatMessageDto);
     sendForm.resetForm(); 
   }
 }

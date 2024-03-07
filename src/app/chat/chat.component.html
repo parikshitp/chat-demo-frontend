@@ -3,20 +3,15 @@
         <div class="chat-header">
             <h2>{{ username }}</h2>
         </div>
-        <div class="chat-messages">
+          <div class="chat-messages">
             <ul>
-              <!-- Display sent and received messages -->
-              <li *ngFor="let message of sentMessages" class="sent">
-                <small>{{ message.senderName }} - {{ message.timestamp | date: 'hh:mm a' }}:</small>
-                <div>{{ message.message }}</div>
-              </li>
-              <li *ngFor="let message of webSocketService.chatMessages" class="received">
-                <small>{{ message.senderName }} - {{ message.timestamp | date: 'hh:mm a' }}:</small>
-                <div>{{ message.message }}</div>
-              </li>
+                <li *ngFor="let message of webSocketService.chatMessages" [ngClass]="message.senderName === username ? 'sent' : 'received'">
+                    <small>{{ message.senderName }} - {{ message.timestamp | date: 'hh:mm a' }}:</small>
+                    <div>{{ message.message }}</div>
+                </li>
             </ul>
-          </div>
-          
+        </div>
+
         <div class="chat-footer">
             <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm" class="message-form">
                 <input type="text" class="message-input" name="message" id="input-message" placeholder="Type a message..." ngModel>
